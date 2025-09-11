@@ -1,0 +1,202 @@
+body{
+    display:grid;
+    grid-template-columns: 15% 85%;
+    height:100vh;
+    margin:0;
+    background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v2/assets/img/page.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: right;
+    font-family: "Charm", cursive; 
+    font-weight: 400;
+    font-style: normal;
+  }
+    
+  #main{
+    position:relative;
+    padding:30px;
+    border-left: dotted black;
+  }
+
+  header.primary{
+      padding: 0px 20px;
+      box-sizing:border-box;
+      background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v1/assets/img/leather.jpg?raw=true);
+      background-color: black;
+      height:100%;
+      display:flex;
+      flex-direction: column;
+  }
+
+  #ribbon{
+    background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v1/assets/img/Green-Ribbon.png?raw=true);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:200px 500px;
+    height:500px;
+    margin-top:-25px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  header.primary h1{
+    margin-bottom:0;
+    text-align:center;
+    padding-top:60px;
+  }
+
+  header.primary h1 a{
+    color:white;
+    font-size:1.5rem;
+  }
+  
+  header.primary nav ul {
+    padding-top:20px;
+    list-style: none;
+    padding-left:0px;
+  }
+
+  header.primary nav ul li{
+    text-align:center;
+    padding-left:14px;
+    padding-right:14px;
+  }
+  
+  header.primary nav ul li a{
+    display:block;
+    color:#ffffff;
+    text-decoration:none;
+    transition:.4s;
+    padding-top:10px;
+    padding-bottom:10px;
+    width:100%;
+  }
+  
+  header.primary nav ul li a:hover{
+    background-color:rgb(1, 94, 1);
+  }
+  
+  section.container{
+    font-size:1.3rem;
+    text-align:center;
+  }
+
+  section.container h2{
+    margin: 0;
+    padding: 35px 60px 35px 60px; /*Top, right, bottom, left*/
+    text-decoration: underline;
+    background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v1/assets/img/tornpaper.png?raw=true);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+  }
+
+  section.container p{
+    margin:0;
+  }
+
+  .fade img {
+    border: solid black 3px;
+    width: 500px;
+    height: auto;
+    display: block;
+  }
+
+  .fade{
+    margin:40px auto;
+    width:510px;
+    /* Set Max Content Width */
+    max-width:700px;
+    position:relative;
+    height:300px;
+  }
+
+  .container figure{
+    position:relative;
+    height:300px;
+  }
+
+  #clip1{
+    border:solid black 5px;
+    position:absolute;
+    top:20px;
+    right:180px;
+  }
+
+  #clip2{
+    border:solid black 5px;
+    position:absolute;
+    top:20px;
+    left:180px;
+  }
+
+  #clip1cap{
+    position:absolute;
+    top:230px;
+    right:180px;
+  }
+
+  #clip2cap{
+    position:absolute;
+    top:230px;
+    left:180px;
+  }
+  
+  #colophon{
+      color:black;
+      position:absolute;
+      bottom:0;
+  }
+
+
+  /*login page styling*/
+
+  #loginfooter{
+    position:absolute;
+    bottom:0;
+    left:30px;
+  }
+
+  #loginform{
+    position:absolute;
+    left:625px;
+    top:200px;
+  }
+
+  form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  form label {
+    margin-right: 10px;
+    white-space: nowrap; /* prevents label from breaking onto two lines */
+  }
+
+  #loginbutton{
+    position:absolute;
+    left:740px;
+    top:300px;
+  }
+
+.slick-autoplay-toggle-button,
+.slick-prev .slick-prev-icon, .slick-next .slick-next-icon,
+.slick-dots li button .slick-dot-icon,
+.slick-dots li.slick-active button .slick-dot-icon {
+  color: white;
+}
+
+/* Customize Previous/Next/Dots/Autoplay - Active State */
+
+.slick-next:focus .slick-next-icon,
+.slick-next:focus .slick-prev-icon,
+.slick-prev:focus .slick-next-icon,
+.slick-prev:focus .slick-prev-icon,
+.slick-dots li button:focus .slick-dot-icon:before,
+.slick-dots li.slick-active button:focus .slick-dot-icon,
+.slick-autoplay-toggle-button:focus 
+{
+    color:black;
+}
