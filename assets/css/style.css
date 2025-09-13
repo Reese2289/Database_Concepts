@@ -3,7 +3,7 @@ body{
     grid-template-columns: 15% 85%;
     height:100vh;
     margin:0;
-    background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v2/assets/img/page.jpg?raw=true);
+    background-image: url(/assets/img/page.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     background-position: right;
@@ -21,7 +21,7 @@ body{
   header.primary{
       padding: 0px 20px;
       box-sizing:border-box;
-      background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v1/assets/img/leather.jpg?raw=true);
+      background-image: url(/assets/img/leather.jpg);
       background-color: black;
       height:100%;
       display:flex;
@@ -29,7 +29,7 @@ body{
   }
 
   #ribbon{
-    background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v1/assets/img/Green-Ribbon.png?raw=true);
+    background-image: url(/assets/img/Green-Ribbon.png);
     background-repeat: no-repeat;
     background-position:center;
     background-size:200px 500px;
@@ -85,7 +85,7 @@ body{
     margin: 0;
     padding: 35px 60px 35px 60px; /*Top, right, bottom, left*/
     text-decoration: underline;
-    background-image: url(https://github.com/Reese2289/web-technologies/blob/main/final-v1/assets/img/tornpaper.png?raw=true);
+    background-image: url(/assets/img/tornpaper.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -169,16 +169,38 @@ body{
     align-items: center;
     margin-bottom: 10px;
   }
+  
+  #username{
+    margin-left: 10px;
+  }
 
-  form label {
-    margin-right: 10px;
-    white-space: nowrap; /* prevents label from breaking onto two lines */
+  #password{
+    margin-left: 10px;
   }
 
   #loginbutton{
     position:absolute;
-    left:740px;
+    left:680px;
     top:300px;
+    background-color: transparent;
+    background-image: url('/assets/img/tornpaper.png');
+    background-size: 100% 160%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #loginbutton:hover{
+    filter: brightness(80%);
+    transition: 0.5s;
+  }
+
+  input:hover{
+    filter:brightness(80%);
+    transition: 0.2s;
   }
 
 .slick-autoplay-toggle-button,
