@@ -212,8 +212,6 @@ body{
   color: white;
 }
 
-/* Customize Previous/Next/Dots/Autoplay - Active State */
-
 .slick-next:focus .slick-next-icon,
 .slick-next:focus .slick-prev-icon,
 .slick-prev:focus .slick-next-icon,
