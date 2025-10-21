@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="description" content="My journey through monster hunter" />
   <meta name="author" content="Johnathan Reese" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Indie+Flower&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
@@ -27,17 +27,17 @@
   </div>
   </header>
   <main>
-<form id="login-registerform">
+<form id="login-registerform" action="/register" method="POST">
   <div>
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="username" name="username" required>
   </div>
   <div>
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" required>
   </div>
+  <button type="submit" id="registerbutton">Register now!</button>
 </form>
-    <button id="registerbutton">Register now!</button>
   <footer id="loginfooter" role="contentinfo">
     <h6>&copy; 2025 Johnathan Reese</h6>
   </footer>  

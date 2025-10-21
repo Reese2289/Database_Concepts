@@ -3,7 +3,7 @@ body{
     grid-template-columns: 15% 85%;
     height:100vh;
     margin:0;
-    background-image: url(/assets/img/page.jpg);
+    background-image: url(/static/images/page.jpg);
     background-repeat: no-repeat;
     background-size:cover;
     background-position: right;
@@ -21,7 +21,7 @@ body{
   header.primary{
       padding: 0px 20px;
       box-sizing:border-box;
-      background-image: url(/assets/img/leather.jpg);
+      background-image: url(/static/images/leather.jpg);
       background-color: black;
       height:100%;
       display:flex;
@@ -29,7 +29,7 @@ body{
   }
 
   #ribbon{
-    background-image: url(/assets/img/Green-Ribbon.png);
+    background-image: url(/static/images/Green-Ribbon.png);
     background-repeat: no-repeat;
     background-position:center;
     background-size:200px 600px;
@@ -85,7 +85,7 @@ body{
     margin: 0;
     padding: 35px 60px 35px 60px; /*Top, right, bottom, left*/
     text-decoration: underline;
-    background-image: url(/assets/img/tornpaper.png);
+    background-image: url(/static/images/tornpaper.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -180,11 +180,10 @@ body{
 
   #loginbutton,
   #registerbutton {
-    position:absolute;
-    left:680px;
-    top:300px;
+    display: block;
+    margin: 40px auto;
     background-color: transparent;
-    background-image: url('/assets/img/tornpaper.png');
+    background-image: url('/static/images/tornpaper.png');
     background-size: 100% 160%;
     background-repeat: no-repeat;
     background-position: center;
@@ -193,6 +192,7 @@ body{
     border: none;
     cursor: pointer;
   }
+
 
   #loginbutton:hover,
   #registerbutton:hover {
