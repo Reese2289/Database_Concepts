@@ -27,18 +27,18 @@
   </div>
   </header>
   <main>
-<form id="login-registerform">
+<form id="login-registerform" action="/login" method="POST">
   <div>
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="username" name="username" required>
   </div>
   <div>
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" required>
   </div>
+    <footer id="loginfooter" role="contentinfo"></footer>
+        <button type="submit" id="loginbutton">Submit</button>
 </form>
-    <button id="loginbutton">Submit</button>
-  <footer id="loginfooter" role="contentinfo">
     <h6>&copy; 2025 Johnathan Reese</h6>
   </footer>  
   </main>  
