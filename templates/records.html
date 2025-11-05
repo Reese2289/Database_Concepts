@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Records</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My journey through monster hunter" />
+    <meta name="author" content="Johnathan Reese" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Indie+Flower&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
+</head>
+
+<body>
+    <header role="banner" class="primary">
+        <div id="ribbon">
+            <h1><a href="/">My Monster Hunter Experience</a></h1>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="/about">About Hunter</a></li>
+                    <li><a href="/highlights">Hunter Highlights</a></li><!--Clips & pics-->
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        {% if records %}
+        <table id="recordsTable">
+            <thead>
+                <tr>
+                    <th>Monster Name</th>
+                    <th>LargestSize</th>
+                    <th>SmallestSize</th>
+                    <th>LargeGoldCrown</th>
+                    <th>SmallGoldCrown</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.monsterName }}</td>
+                    <td>{{ record.largestSize }}</td>
+                    <td>{{ record.smallestSize }}</td>
+                    <td>{{ 'Yes' if record.largeGoldCrown else 'No' }}</td>
+                    <td>{{ 'Yes' if record.smallGoldCrown else 'No' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No records found!</p>
+        {% endif %}
+        <form action="/add_record" method="POST" id="recordForm">
+            <div class="form-row">
+                <input type="text" name="monsterName" placeholder="Monster Name" required>
+                <input type="text" name="largestSize" placeholder="Largest Size" required>
+                <input type="text" name="smallestSize" placeholder="Smallest Size" required>
+                <label>
+                    <input type="checkbox" name="largeGoldCrown" value="true">
+                    Large Gold Crown
+                </label>
+                <label>
+                    <input type="checkbox" name="smallGoldCrown" value="true">
+                    Small Gold Crown
+                </label>
+                <button type="submit" id="addbutton">Add Record</button>
+            </div>
+        </form>
+        <form action="/clear_records" method="POST">
+            <button type="submit" id="clearbutton">Clear Records</button>
+        </form>
+        <form action="/records" method="GET">
+            <button type="submit" id="refreshbutton">Refresh Records</button>
+        </form>
+        <footer id="colophon" role="contentinfo">
+            <h6>&copy; 2025 Johnathan Reese</h6>
+        </footer>
+    </main>
+</body>
+
+</html>

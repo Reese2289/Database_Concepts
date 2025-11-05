@@ -2,46 +2,49 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>Register</title>
   <meta charset="UTF-8" />
   <meta name="description" content="My journey through monster hunter" />
   <meta name="author" content="Johnathan Reese" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Indie+Flower&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Indie+Flower&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
 </head>
 
 <body>
   <header role="banner" class="primary">
     <div id="ribbon">
-    <h1><a href="../index.html">My Monster Hunter Experience</a></h1>
-    <nav role="navigation">
-      <ul>
-        <li><a href="about.html">About Hunter</a></li>
-        <li><a href="highlights.html">Hunter Highlights</a></li><!--Clips & pics-->
-        <li><a href="contactme.html">Contact Me</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </div>
+      <h1><a href="/">My Monster Hunter Experience</a></h1>
+      <nav role="navigation">
+        <ul>
+          <li><a href="/about">About Hunter</a></li>
+          <li><a href="/highlights">Hunter Highlights</a></li><!--Clips & pics-->
+          <li><a href="/records">Records</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main>
-<form id="login-registerform" action="/register" method="POST">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-  </div>
-  <button type="submit" id="registerbutton">Register now!</button>
-</form>
-  <footer id="loginfooter" role="contentinfo">
-    <h6>&copy; 2025 Johnathan Reese</h6>
-  </footer>  
-  </main>  
+  <main id="main">
+    <form id="login-registerform" action="/register" method="POST">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" id="registerbutton">Register now!</button>
+    </form>
+    <footer id="colophon" role="contentinfo">
+      <h6>&copy; 2025 Johnathan Reese</h6>
+    </footer>
+  </main>
 </body>
 
 </html>

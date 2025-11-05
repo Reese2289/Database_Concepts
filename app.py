@@ -63,6 +63,56 @@ def login():
 
     return render_template('login.html')
 
+# Load database records for logged in user
+@app.route('/records')
+def records():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    conn = get_db_connection()
+    records = conn.execute(
+        'SELECT * FROM monsterData WHERE UserID = ?', (session['user_id'],)
+    ).fetchall()
+    conn.close()
+
+    return render_template('records.html', records=records)
+
+# Add new record for logged in user
+@app.route('/add_record', methods=['GET', 'POST'])
+def add_record():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        monsterName = request.form.get('monsterName')
+        largestSize = request.form.get('largestSize')
+        smallestSize = request.form.get('smallestSize')
+        largeGoldCrown = 'largeGoldCrown' in request.form
+        smallGoldCrown = 'smallGoldCrown' in request.form
+        conn = get_db_connection()
+        conn.execute(
+            'INSERT INTO monsterData (UserID, MonsterName, LargestSize, SmallestSize, LargeGoldCrown, SmallGoldCrown) VALUES (?, ?, ?, ?, ?, ?)',
+            (session['user_id'], monsterName, largestSize, smallestSize, largeGoldCrown, smallGoldCrown)
+        )
+        conn.commit()
+        conn.close()
+
+        return redirect(url_for('records'))
+    return render_template('records.html')
+
+@app.route('/clear_records', methods=['POST'])
+def clear_records():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    conn = get_db_connection()
+    conn.execute(
+        'DELETE FROM monsterData WHERE UserID = ?', (session['user_id'],)
+    )
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for('records'))
 
 if __name__ == '__main__':
     app.run(debug=True)
