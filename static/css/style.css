@@ -155,7 +155,7 @@ section.container p {
 
 #login-registerform {
   position: absolute;
-  left: 625px;
+  left: 500px;
   top: 200px;
 }
 
@@ -170,7 +170,7 @@ form div {
 }
 
 #password {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 #loginbutton,
@@ -193,18 +193,25 @@ form div {
 #recordsTable {
   width: 80%;
   margin: 20px auto;
-  border-collapse: collapse;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
+  border: solid black 1px;
 }
 
 #recordForm .form-row {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
   margin: 20px auto;
   width: 80%;
+}
+
+#recordsTable th, #recordsTable td {
+  border: 1px solid black; /* adds border around each cell */
+  padding: 8px; /* optional: adds spacing inside the cell */
+  text-align: center; /* optional: centers text */
 }
 
 #loginbutton:hover,

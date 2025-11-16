@@ -114,5 +114,14 @@ def clear_records():
 
     return redirect(url_for('records'))
 
+@app.context_processor
+def inject_user():
+    return dict(username=session.get('username'))
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('home'))
+
 if __name__ == '__main__':
     app.run(debug=True)
