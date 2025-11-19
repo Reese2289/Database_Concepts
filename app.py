@@ -100,20 +100,6 @@ def add_record():
         return redirect(url_for('records'))
     return render_template('records.html')
 
-@app.route('/clear_records', methods=['POST'])
-def clear_records():
-    if 'user_id' not in session:
-        return redirect(url_for('login'))
-
-    conn = get_db_connection()
-    conn.execute(
-        'DELETE FROM monsterData WHERE UserID = ?', (session['user_id'],)
-    )
-    conn.commit()
-    conn.close()
-
-    return redirect(url_for('records'))
-
 @app.context_processor
 def inject_user():
     return dict(username=session.get('username'))
